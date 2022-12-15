@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/ioanlatrovaliev/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/ioanlatrovaliev/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/ioanlatrovaliev/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -215,6 +220,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ioanlatrovaliev/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  ["vim-moonfly-colors"] = {
+    loaded = true,
+    path = "/Users/ioanlatrovaliev/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-nightfly-guicolors"] = {
     loaded = true,

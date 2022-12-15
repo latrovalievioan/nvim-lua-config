@@ -34,6 +34,8 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  use('bluz71/vim-moonfly-colors')
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)

@@ -21,7 +21,9 @@ opt.hlsearch = false
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-vim.g.nightflyTransparent = true
+-- vim.g.nightflyTransparent = true
+vim.g.moonflyCursorColor = true
+vim.g.moonflyTransparent = true
 
 -- backspace
 opt.backspace = "indent,eol,start"

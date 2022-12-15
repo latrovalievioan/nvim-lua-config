@@ -29,8 +29,14 @@ lualine_nightfly.command = {
 }
 
 -- configure lualine with modified theme
-lualine.setup({
-  options = {
-    theme = lualine_nightfly,
-  },
-})
+-- lualine.setup({
+--   options = {
+--     theme = lualine_nightfly,
+--   },
+-- }
+require('lualine').setup {
+    options = {
+        theme = "catppuccin"
+        -- ... the rest of your lualine config
+    }
+}
