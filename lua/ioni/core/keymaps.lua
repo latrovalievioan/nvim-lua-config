@@ -33,3 +33,7 @@ keymap.set("n", "<C-f>", "<cmd>Telescope live_grep<cr>") -- find string in curre
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<C-o>", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+
+-- use ctrl+c for esc
+keymap.set("i", "<C-c>", "<Esc>")
