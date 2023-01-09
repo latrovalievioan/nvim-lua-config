@@ -37,3 +37,5 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- use ctrl+c for esc
 keymap.set("i", "<C-c>", "<Esc>")
+
+vim.api.nvim_create_user_command('Prettier', ':! prettier --write %', {})
