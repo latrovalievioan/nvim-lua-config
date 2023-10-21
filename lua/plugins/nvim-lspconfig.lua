@@ -71,6 +71,11 @@ local config = function()
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
+	lspconfig.gopls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+
 	-- bash
 	lspconfig.bashls.setup({
 		capabilities = capabilities,
@@ -121,6 +126,8 @@ local config = function()
 	local alex = require("efmls-configs.linters.alex")
 	local hadolint = require("efmls-configs.linters.hadolint")
 	local solhint = require("efmls-configs.linters.solhint")
+	local gofumpt = require("efmls-configs.formatters.gofumpt")
+	local go_revive = require("efmls-configs.linters.go_revive")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -139,6 +146,7 @@ local config = function()
 			"markdown",
 			"docker",
 			"solidity",
+			"go",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -164,6 +172,7 @@ local config = function()
 				markdown = { alex, prettierd },
 				docker = { hadolint, prettierd },
 				solidity = { solhint },
+				go = { gofumpt, go_revive },
 			},
 		},
 	})
