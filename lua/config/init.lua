@@ -19,9 +19,6 @@ local opts = {
 	defaults = {
 		lazy = true,
 	},
-	install = {
-		colorscheme = { "nightfox" },
-	},
 	rtp = {
 		disabled_plugins = {
 			"gzip",
