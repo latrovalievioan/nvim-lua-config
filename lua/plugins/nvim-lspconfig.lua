@@ -67,6 +67,8 @@ local config = function()
 		filetypes = {
 			"typescript",
 			"typescriptreact",
+			"javascript",
+			"javascriptreact",
 		},
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
