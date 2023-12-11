@@ -43,23 +43,6 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
-	-- python
-	lspconfig.pyright.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = {
-			pyright = {
-				disableOrganizeImports = false,
-				analysis = {
-					useLibraryCodeForTypes = true,
-					autoSearchPaths = true,
-					diagnosticMode = "workspace",
-					autoImportCompletions = true,
-				},
-			},
-		},
-	})
-
 	-- typescript
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
@@ -76,20 +59,6 @@ local config = function()
 	lspconfig.gopls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-	})
-
-	-- bash
-	lspconfig.bashls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "sh" },
-	})
-
-	-- solidity
-	lspconfig.solidity.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "solidity" },
 	})
 
 	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
@@ -110,26 +79,13 @@ local config = function()
 		},
 	})
 
-	-- docker
-	lspconfig.dockerls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
-	local flake8 = require("efmls-configs.linters.flake8")
-	local black = require("efmls-configs.formatters.black")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
-	local prettier = require("efmls-configs.formatters.prettier")
 	local fixjson = require("efmls-configs.formatters.fixjson")
-	local shellcheck = require("efmls-configs.linters.shellcheck")
-	local shfmt = require("efmls-configs.formatters.shfmt")
-	local alex = require("efmls-configs.linters.alex")
-	local hadolint = require("efmls-configs.linters.hadolint")
-	local solhint = require("efmls-configs.linters.solhint")
 	local gofumpt = require("efmls-configs.formatters.gofumpt")
 	local go_revive = require("efmls-configs.linters.go_revive")
+	local prettier = require("efmls-configs.formatters.prettier")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -161,20 +117,13 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				python = { flake8, black },
 				typescript = { eslint_d, prettier },
-				json = { eslint_d, fixjson },
-				jsonc = { eslint_d, fixjson },
-				sh = { shellcheck, shfmt },
 				javascript = { eslint_d, prettier },
 				javascriptreact = { eslint_d, prettier },
 				typescriptreact = { eslint_d, prettier },
-				svelte = { eslint_d, prettier },
-				vue = { eslint_d, prettier },
-				markdown = { alex, prettier },
-				docker = { hadolint, prettier },
-				solidity = { solhint },
 				go = { gofumpt, go_revive },
+				json = { eslint_d, fixjson },
+				jsonc = { eslint_d, fixjson },
 			},
 		},
 	})
