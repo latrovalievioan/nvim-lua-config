@@ -15,6 +15,14 @@ return {
 			definition_action_keys = {
 				edit = "<CR>",
 			},
+			finder = {
+				keys = {
+					tabe = "<CR>",
+				},
+			},
+			ui = {
+				code_action = "",
+			},
 		})
 	end,
 	dependencies = {
