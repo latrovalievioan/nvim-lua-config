@@ -61,6 +61,11 @@ local config = function()
 		capabilities = capabilities,
 	})
 
+	lspconfig.hls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+
 	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
