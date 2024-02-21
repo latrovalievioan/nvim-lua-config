@@ -1,3 +1,8 @@
+## Dependencies
+- Neovim
+- Node
+- Ripgrep
+
 ## TODOS
 
 - [ ] Figure out jsx comments (Comment.nvim doesn't support jsx/tsx treesitter)
