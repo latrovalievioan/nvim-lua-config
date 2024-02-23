@@ -43,6 +43,10 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
+  lspconfig.eslint.setup {
+    capabilities = capabilities
+  }
+
 	-- typescript
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
@@ -86,7 +90,6 @@ local config = function()
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
-	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local fixjson = require("efmls-configs.formatters.fixjson")
 	local gofumpt = require("efmls-configs.formatters.gofumpt")
 	local go_revive = require("efmls-configs.linters.go_revive")
@@ -122,13 +125,13 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				typescript = { eslint_d, prettier },
-				javascript = { eslint_d, prettier },
-				javascriptreact = { eslint_d, prettier },
-				typescriptreact = { eslint_d, prettier },
+				typescript = { prettier },
+				javascript = { prettier },
+				javascriptreact = { prettier },
+				typescriptreact = { prettier },
 				go = { gofumpt, go_revive },
-				json = { eslint_d, fixjson },
-				jsonc = { eslint_d, fixjson },
+				json = { fixjson },
+				jsonc = { fixjson },
 			},
 		},
 	})
