@@ -3,5 +3,9 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	lazy = false,
-	config = {},
+	config = {
+    view = {
+      width = 70,
+    }
+  },
 }
