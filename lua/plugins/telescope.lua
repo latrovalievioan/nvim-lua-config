@@ -5,12 +5,15 @@ local mapkey = vim.keymap
 local config = function()
 	local telescope = require("telescope")
 	telescope.setup({
-      defaults = {
-            path_display = {
-                "smart"
-            }
-      },
-    })
+    defaults = {
+        layout_strategy = 'vertical',
+        layout_config = {
+            height = 0.99,
+            width = 0.99,
+            preview_cutoff = 1
+        }
+    },
+})
 end
 
 return {

@@ -14,6 +14,7 @@ local opts = {
 		"emmet_ls",
 		"jsonls",
 		"hls",
+        "elixirls"
 	},
 
 	automatic_installation = true,
