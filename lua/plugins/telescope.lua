@@ -22,7 +22,7 @@ return {
 	keys = {
 		vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>"),
 		vim.keymap.set("n", "<leader>f", ":Telescope git_files<CR>"),
-		vim.keymap.set("n", "<leader>st", ":Telescope live_grep<CR>"),
+		vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>"),
 		vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
 	},
 }
