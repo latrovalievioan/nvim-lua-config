@@ -43,18 +43,23 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
-    lspconfig.eslint.setup {
-        capabilities = capabilities
-    }
+	lspconfig.eslint.setup({
+		capabilities = capabilities,
+		on_attach = function(_, bufnr)
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				command = "EslintFixAll",
+			})
+		end,
+	})
 
 	lspconfig.elixirls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-        filetypes = { "elixir", "eelixir", "heex", "surface" },
-        root_dir = lspconfig.util.root_pattern("mix.exs", ".git") or vim.loop.os_homedir(),
-        cmd = {"/opt/homebrew/bin/elixir-ls"}
+		filetypes = { "elixir", "eelixir", "heex", "surface" },
+		root_dir = lspconfig.util.root_pattern("mix.exs", ".git") or vim.loop.os_homedir(),
+		cmd = { "/opt/homebrew/bin/elixir-ls" },
 	})
-
 
 	-- typescript
 	lspconfig.tsserver.setup({
@@ -67,6 +72,16 @@ local config = function()
 			"javascriptreact",
 		},
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+	})
+
+	lspconfig.stylelint_lsp.setup({
+		filetypes = { "css", "scss" },
+		settings = {
+			stylelintplus = {
+				autoFixOnSave = true,
+				autoFixOnFormat = true,
+			},
+		},
 	})
 
 	lspconfig.gopls.setup({
@@ -136,7 +151,7 @@ local config = function()
 				lua = { luacheck, stylua },
 				typescript = { prettier },
 				javascript = { prettier },
-                css = { prettier },
+				css = { prettier },
 				javascriptreact = { prettier },
 				typescriptreact = { prettier },
 				go = { gofumpt, go_revive },
