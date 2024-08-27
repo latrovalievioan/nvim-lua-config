@@ -11,7 +11,6 @@ local opts = {
 		"html",
 		"cssls",
 		"lua_ls",
-		"emmet_ls",
 		"jsonls",
 		"hls",
         "elixirls"

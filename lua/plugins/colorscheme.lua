@@ -6,13 +6,13 @@ return {
 		name = "gruvbox-material",
 		lazy = false,
 		config = function()
-   vim.g.gruvbox_material_dim_inactive_windows = 1
+			vim.g.gruvbox_material_dim_inactive_windows = 1
 			vim.g.gruvbox_material_better_performance = 1
 			-- Fonts
 			vim.g.gruvbox_material_disable_italic_comment = 0
 			vim.g.gruvbox_material_enable_italic = 0
 			vim.g.gruvbox_material_enable_bold = 1
-			vim.g.gruvbox_material_transparent_background = 0
+			vim.g.gruvbox_material_transparent_background = 1
 			-- Themes
 			vim.g.gruvbox_material_foreground = "medium"
 			vim.g.gruvbox_material_background = "medium"

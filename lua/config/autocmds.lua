@@ -7,6 +7,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 			return
 		end
 
-		vim.lsp.buf.format({ name = "efm", async = true })
+		vim.lsp.buf.format({ name = "efm", async = false })
 	end,
 })

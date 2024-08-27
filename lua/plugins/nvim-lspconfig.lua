@@ -36,6 +36,13 @@ local config = function()
 		},
 	})
 
+	-- tailwind
+	lspconfig.tailwindcss.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "typescriptreact", "javascriptreact" },
+	})
+
 	-- json
 	lspconfig.jsonls.setup({
 		capabilities = capabilities,
@@ -43,8 +50,10 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
+	-- eslint
 	lspconfig.eslint.setup({
 		capabilities = capabilities,
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro", "svg", "html" },
 		on_attach = function(_, bufnr)
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				buffer = bufnr,
@@ -94,72 +103,77 @@ local config = function()
 		capabilities = capabilities,
 	})
 
-	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
-	lspconfig.emmet_ls.setup({
-		capabilities = capabilities,
+    lspconfig.bashls.setup({
 		on_attach = on_attach,
-		filetypes = {
-			"html",
-			"typescriptreact",
-			"javascriptreact",
-			"javascript",
-			"css",
-			"sass",
-			"scss",
-			"less",
-			"svelte",
-			"vue",
-		},
-	})
+		capabilities = capabilities,
+    })
 
-	local luacheck = require("efmls-configs.linters.luacheck")
-	local stylua = require("efmls-configs.formatters.stylua")
-	local fixjson = require("efmls-configs.formatters.fixjson")
-	local gofumpt = require("efmls-configs.formatters.gofumpt")
-	local go_revive = require("efmls-configs.linters.go_revive")
-	local prettier = require("efmls-configs.formatters.prettier")
+	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
+	-- lspconfig.emmet_ls.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = {
+	-- 		"html",
+	-- 		"typescriptreact",
+	-- 		"javascriptreact",
+	-- 		"javascript",
+	-- 		"css",
+	-- 		"sass",
+	-- 		"scss",
+	-- 		"less",
+	-- 		"svelte",
+	-- 		"vue",
+	-- 	},
+	-- })
 
+	-- local luacheck = require("efmls-configs.linters.luacheck")
+	-- local stylua = require("efmls-configs.formatters.stylua")
+	-- local fixjson = require("efmls-configs.formatters.fixjson")
+	-- local gofumpt = require("efmls-configs.formatters.gofumpt")
+	-- local go_revive = require("efmls-configs.linters.go_revive")
+	-- local prettier = require("efmls-configs.formatters.prettier_d")
+	--
 	-- configure efm server
-	lspconfig.efm.setup({
-		filetypes = {
-			"lua",
-			"python",
-			"json",
-			"jsonc",
-			"sh",
-			"javascript",
-			"javascriptreact",
-			"typescript",
-			"typescriptreact",
-			"svelte",
-			"vue",
-			"markdown",
-			"docker",
-			"solidity",
-			"go",
-		},
-		init_options = {
-			documentFormatting = true,
-			documentRangeFormatting = true,
-			hover = true,
-			documentSymbol = true,
-			codeAction = true,
-			completion = true,
-		},
-		settings = {
-			languages = {
-				lua = { luacheck, stylua },
-				typescript = { prettier },
-				javascript = { prettier },
-				css = { prettier },
-				javascriptreact = { prettier },
-				typescriptreact = { prettier },
-				go = { gofumpt, go_revive },
-				json = { fixjson },
-				jsonc = { fixjson },
-			},
-		},
-	})
+	-- lspconfig.efm.setup({
+	-- 	filetypes = {
+	-- 		"lua",
+	-- 		"python",
+	-- 		"json",
+	-- 		"jsonc",
+	-- 		"sh",
+	-- 		"javascript",
+	-- 		"javascriptreact",
+	-- 		"typescript",
+	-- 		"typescriptreact",
+	-- 		"svelte",
+	-- 		"vue",
+	-- 		"markdown",
+	-- 		"docker",
+	-- 		"solidity",
+	-- 		"go",
+	-- 	},
+	-- 	init_options = {
+	-- 		documentFormatting = true,
+	-- 		documentRangeFormatting = true,
+	-- 		hover = true,
+	-- 		documentSymbol = true,
+	-- 		codeAction = true,
+	-- 		completion = true,
+	-- 	},
+	-- 	settings = {
+	-- 		languages = {
+	-- 			-- lua = { luacheck, stylua },
+	-- 			typescript = { prettier },
+	-- 			javascript = { prettier },
+	-- 			css = { prettier },
+	-- 			javascriptreact = { prettier },
+	-- 			typescriptreact = { prettier },
+				-- go = { gofumpt, go_revive },
+				-- json = { fixjson },
+				-- jsonc = { fixjson },
+	-- 		},
+	-- 	},
+	-- })
 end
 
 return {
