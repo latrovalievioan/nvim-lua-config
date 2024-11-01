@@ -70,6 +70,18 @@ local config = function()
 		cmd = { "/opt/homebrew/bin/elixir-ls" },
 	})
 
+    lspconfig.csharp_ls.setup({
+        capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "cs" },
+    })
+
+  --   lspconfig.csharpier.setup({
+  --       capabilities = capabilities,
+		-- on_attach = on_attach,
+		-- filetypes = { "cs" },
+  --   })
+
 	-- typescript
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
