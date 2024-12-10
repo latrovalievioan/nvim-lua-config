@@ -36,6 +36,13 @@ local config = function()
 		},
 	})
 
+	-- mdx
+	lspconfig.mdx_analyzer.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "mdx" },
+	})
+
 	-- tailwind
 	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,

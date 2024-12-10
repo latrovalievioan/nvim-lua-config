@@ -24,5 +24,6 @@ return {
 		vim.keymap.set("n", "<leader>f", ":Telescope git_files<CR>"),
 		vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>"),
 		vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
+        vim.keymap.set("n", "<leader>fs", ":Telescope git_status<CR>"),
 	},
 }

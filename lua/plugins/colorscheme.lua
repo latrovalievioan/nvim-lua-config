@@ -1,8 +1,6 @@
--- COLORSCHEME
-
 return {
 	{
-		"sainnhe/gruvbox-material",
+	"sainnhe/gruvbox-material",
 		name = "gruvbox-material",
 		lazy = false,
 		config = function()
@@ -20,6 +18,7 @@ return {
 			vim.g.gruvbox_material_float_style = "dim" -- Background of floating windows
 
 			vim.cmd("colorscheme gruvbox-material")
+            vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "none" })
 		end,
 	},
 }
