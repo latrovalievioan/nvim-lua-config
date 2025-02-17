@@ -30,6 +30,7 @@ local config = function()
 			"vue",
 			"go",
 			"haskell",
+            "regex"
 		},
 		auto_install = true,
 		highlight = {

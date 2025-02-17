@@ -2,12 +2,38 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
+    explorer = {
+      -- your explorer configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
     picker = {
       -- your picker configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
+    },
+    indent = {
+      -- your indent configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    notifier = {
+      -- your notifier configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    scroll = {
+      -- your scroll configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    statuscolumn = {
+      -- your statuscolumn configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
     }
   },
+  priority=1000,
   lazy = false,
   keys = {
     { "<leader>ff", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
