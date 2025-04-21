@@ -5,10 +5,7 @@
 
 ## TODOS
 
-- [ ] Figure out jsx comments (Comment.nvim doesn't support jsx/tsx treesitter)
-
-- [x] Make config lighter by removing useless stuff
-  - [x] Remove Alpha.nvim
-  - [x] Remove Whichkey
-  - [x] Remove statusline because it doesn't add to my vimxperience
-  - [x] Remove Vim illuminate
+- [ ] Fix hover on ts files;
+- [ ] Make eslint work with the new lsp config.
+- [ ] Autoformat with stylelint doesnt work.
+- [ ] Port the rest of nvim-lspconfig to the lsp folder.
