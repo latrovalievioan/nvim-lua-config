@@ -1,3 +1,5 @@
+-- COLORSCHEME
+
 return {
 	{
 	"sainnhe/gruvbox-material",

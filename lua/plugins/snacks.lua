@@ -2,11 +2,6 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    explorer = {
-      -- your explorer configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
     picker = {
       -- your picker configuration comes here
       -- or leave it empty to use the default settings
@@ -14,11 +9,6 @@ return {
     },
     indent = {
       -- your indent configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-    notifier = {
-      -- your notifier configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
@@ -40,10 +30,6 @@ return {
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fw", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>fs", function() Snacks.picker.git_status() end, desc = "Git Status" },
-
-
-
-    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 
     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },

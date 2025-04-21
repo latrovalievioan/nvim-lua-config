@@ -1,7 +1,7 @@
 -- LSP STUFF
 
 local on_attach = require("util.lsp").on_attach
-local diagnostic_signs = require("util.lsp").diagnostic_signs
+local diagnostic_signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
 
 local config = function()
 	require("neoconf").setup({})
@@ -57,6 +57,13 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
+	-- json
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "cpp", "" },
+	})
+
 	-- eslint
 	lspconfig.eslint.setup({
 		capabilities = capabilities,
@@ -90,7 +97,7 @@ local config = function()
   --   })
 
 	-- typescript
-	lspconfig.tsserver.setup({
+	lspconfig.ts_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {

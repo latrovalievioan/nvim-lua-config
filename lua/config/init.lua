@@ -13,24 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.options")
 require("config.keymaps")
-require("config.autocmds")
 
 local opts = {
 	defaults = {
 		lazy = true,
-	},
-	rtp = {
-		disabled_plugins = {
-			"gzip",
-			"matchit",
-			"matchparen",
-			"netrw",
-			"netrwPlugin",
-			"tarPlugin",
-			"tohtml",
-			"tutor",
-			"zipPlugin",
-		},
 	},
 	change_detection = {
 		notify = false,

@@ -6,9 +6,6 @@ local config = function()
 		indent = {
 			enable = true,
 		},
-		autotag = {
-			enable = true,
-		},
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -30,7 +27,6 @@ local config = function()
 			"vue",
 			"go",
 			"haskell",
-            "regex"
 		},
 		auto_install = true,
 		highlight = {

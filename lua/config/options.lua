@@ -22,7 +22,7 @@ opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
 opt.cursorline = true
-opt.relativenumber = true
+opt.relativenumber = false;
 
 -- Behaviour
 opt.hidden = true
