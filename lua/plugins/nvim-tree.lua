@@ -1,11 +1,11 @@
 -- FILE TREE
 
 return {
-	"nvim-tree/nvim-tree.lua",
-	lazy = false,
-	config = {
-    view = {
-      width = 70,
-    }
-  },
+    "nvim-tree/nvim-tree.lua",
+    lazy = false,
+    config = {
+        view = {
+            width = 70,
+        }
+    },
 }
