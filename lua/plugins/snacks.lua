@@ -36,5 +36,12 @@ return {
         { "gr",         function() Snacks.picker.lsp_references() end,       nowait = true,                  desc = "References" },
         { "gi",         function() Snacks.picker.lsp_implementations() end,  desc = "Goto Implementation" },
         { "gt",         function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+
+        { "<leader>fW", function()
+            local dir = vim.fn.input("Directory: ", vim.fn.getcwd(), "dir")
+            if dir ~= "" then
+                Snacks.picker.grep({ cwd = dir })
+            end
+        end, { desc = "Grep in chosen directory" } }
     }
 }
