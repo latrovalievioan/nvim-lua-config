@@ -21,6 +21,17 @@ return {
             -- your statuscolumn configuration comes here
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
+            -- enabled = true,
+            left = { "mark", "sign" }, -- priority of signs on the left
+            right = { "fold", "git" }, -- priority of signs on the right
+            folds = {
+                open = true,   -- show open fold icons
+                git_hl = false, -- use git sign hl for fold icons
+            },
+            git = {
+                patterns = { "GitSign", "MiniDiffSign" },
+            },
+            refresh = 50, -- refresh at most every 50ms
         }
     },
     priority = 1000,
