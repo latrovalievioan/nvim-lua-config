@@ -12,7 +12,6 @@ local opts = {
         "cssls",
         "lua_ls",
         "jsonls",
-        "elixirls"
     },
 
     automatic_installation = true,

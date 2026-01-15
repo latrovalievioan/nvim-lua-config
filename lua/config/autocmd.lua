@@ -1,4 +1,3 @@
--- autocmd [] event pattern command
 vim.api.nvim_create_autocmd("BufRead", {
     pattern = "*Jenkins*",
     callback = function()
@@ -14,5 +13,5 @@ vim.api.nvim_create_autocmd("BufRead", {
 })
 
 vim.api.nvim_create_user_command('LspInfo', function()
-    vim.print(vim.lsp.get_clients({ bufnr = 0 }))
+  for _, client in pairs(vim.lsp.get_clients({bufnr = 0})) do print(client.name) end
 end, {})

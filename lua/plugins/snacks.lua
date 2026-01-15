@@ -29,7 +29,7 @@ return {
                 git_hl = false, -- use git sign hl for fold icons
             },
             git = {
-                patterns = { "GitSign", "MiniDiffSign" },
+                patterns = { "GitSign", "MiniDiffSign", "MiniDiff" },
             },
             refresh = 50, -- refresh at most every 50ms
         }
