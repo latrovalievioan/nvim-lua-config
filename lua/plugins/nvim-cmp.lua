@@ -45,13 +45,16 @@ return {
     end,
     dependencies = {
         "onsails/lspkind.nvim",
+        "hrsh7th/cmp-nvim-lsp",     -- LSP source for nvim-cmp
+        "hrsh7th/cmp-buffer",       -- Buffer completions
+        "hrsh7th/cmp-path",         -- Path completions
         {
-
             "L3MON4D3/LuaSnip",
             -- follow latest release.
             version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
             -- install jsregexp (optional!).
             build = "make install_jsregexp",
         },
+        "saadparwaiz1/cmp_luasnip", -- Snippet completions
     },
 }

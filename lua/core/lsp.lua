@@ -1,4 +1,13 @@
+-- Enable LSP servers with completion capabilities
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Configure LSP servers
+vim.lsp.config("*", {
+    capabilities = capabilities,
+})
+
 vim.lsp.enable({
+    "eslint",
     "lua_ls",
     "ts_ls"
 })
