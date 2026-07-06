@@ -1,7 +1,5 @@
--- Enable LSP servers with completion capabilities
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- Configure LSP servers
 vim.lsp.config("*", {
     capabilities = capabilities,
 })
@@ -36,4 +34,3 @@ vim.diagnostic.config({
         },
     },
 })
-

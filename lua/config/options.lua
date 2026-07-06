@@ -43,22 +43,25 @@ opt.encoding = "UTF-8"
 opt.winborder = "rounded"
 
 vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = true       -- start with folding enabled
-vim.o.foldlevel = 99          -- don't close all folds on open
-vim.o.foldlevelstart = 99     -- same as above, useful when opening files
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldenable = true   -- start with folding enabled
+vim.o.foldlevel = 99      -- don't close all folds on open
+vim.o.foldlevelstart = 99 -- same as above, useful when opening files
+
+opt.shell = "zsh"
+vim.opt.shellcmdflag = "-ic" -- interactive shell
 
 -- Define diagnostic signs
 local signs = {
-  Error = "󰅚",
-  Warn = "󰀪",
-  Hint = "󰌶",
-  Info = ""
+    Error = "󰅚",
+    Warn = "󰀪",
+    Hint = "󰌶",
+    Info = ""
 }
 
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 vim.cmd.colorscheme('default')
