@@ -140,7 +140,8 @@ return {
       enable = false,
       mode = 'all',
     },
-    format = true,
+    -- Formatting is handled by prettier via efm; eslint stays for lint fixes.
+    format = false,
     quiet = false,
     onIgnoredFiles = 'off',
     rulesCustomizations = {},

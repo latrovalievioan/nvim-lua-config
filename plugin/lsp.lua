@@ -8,7 +8,8 @@ vim.lsp.enable({
     "eslint",
     "lua_ls",
     "ts_ls",
-    "clangd"
+    "clangd",
+    "efm",
 })
 
 vim.diagnostic.config({
