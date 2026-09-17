@@ -31,6 +31,17 @@ opt.swapfile = false
 opt.backup = false
 opt.undodir = vim.fn.expand("~/.vim/undodir")
 opt.undofile = true
+
+-- Disable undo file for paths that exceed filesystem filename limits (255 bytes)
+vim.api.nvim_create_autocmd("BufRead", {
+  callback = function()
+    local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p")
+    local encoded = path:gsub("/", "%%")
+    if #encoded > 255 then
+      vim.bo.undofile = false
+    end
+  end,
+})
 opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
